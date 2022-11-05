@@ -3,7 +3,7 @@ import { Route, Routes, NavLink } from 'react-router-dom';
 import BooksList from './components/BooksList';
 import FormInput from './components/FormInput';
 
-function BooksContainer() {
+function App() {
   const [booksArr] = useState([
     { id: 1, title: 'Sample book one', author: 'sample author one' },
     { id: 2, title: 'sample book two', author: 'sample author two' },
@@ -35,4 +35,4 @@ function BooksContainer() {
   );
 }
 
-export default BooksContainer;
+export default App;
