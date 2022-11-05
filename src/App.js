@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Route, Routes, NavLink } from 'react-router-dom';
+import BooksList from './components/BooksList';
+import FormInput from './components/FormInput';
 
 function App() {
+  const [booksArr] = useState([
+    { id: 1, title: 'Sample book one', author: 'sample author one' },
+    { id: 2, title: 'sample book two', author: 'sample author two' },
+  ]);
+  const mockBooks = [...booksArr];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <NavLink to="/">Books</NavLink>
+        {' '}
+        <NavLink to="/categories">Categories</NavLink>
+      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={(
+            <>
+              <BooksList booksArr={mockBooks} />
+              <FormInput />
+            </>
+          )}
+        />
+        <Route
+          path="/categories"
+          element={<button type="button">Check Status</button>}
+        />
+      </Routes>
+    </>
   );
 }
 
