@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Routes, NavLink } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import BooksList from './components/BooksList';
 import FormInput from './components/FormInput';
+import { checkStatus } from './redux/categories/categories';
 
 function App() {
-  const [booksArr] = useState([
-    { id: 1, title: 'Sample book one', author: 'sample author one' },
-    { id: 2, title: 'sample book two', author: 'sample author two' },
-  ]);
-  const mockBooks = [...booksArr];
+  const books = useSelector((state) => state.books);
+  const status = useSelector((state) => state.categories);
+  const dispatch = useDispatch();
+
   return (
     <>
       <div>
@@ -21,14 +22,29 @@ function App() {
           path="/"
           element={(
             <>
-              <BooksList booksArr={mockBooks} />
+              <BooksList booksArr={books} />
               <FormInput />
             </>
           )}
         />
         <Route
           path="/categories"
-          element={<button type="button">Check Status</button>}
+          element={(
+            <>
+              <h1>
+                {status}
+                {' '}
+              </h1>
+              <button
+                type="button"
+                onClick={() => {
+                  dispatch(checkStatus());
+                }}
+              >
+                Check Status
+              </button>
+            </>
+          )}
         />
       </Routes>
     </>
