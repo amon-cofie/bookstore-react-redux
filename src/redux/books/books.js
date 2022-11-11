@@ -1,29 +1,61 @@
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
+import booksService from '../services/bookStoreAPIAccess';
+
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
-export default function books(
-  state = [
-    { id: 1, title: 'Sample book one', author: 'sample author one' },
-    { id: 2, title: 'sample book two', author: 'sample author two' },
-  ],
-  action,
-) {
-  switch (action.type) {
-    case ADD_BOOK:
-      return [...state, action.book];
-    case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.book.id);
-    default:
-      return state;
+const initialState = {
+  books: {},
+  isLoading: true,
+};
+
+export const AsyncGetBooks = createAsyncThunk('GET_BOOKS', async () => {
+  try {
+    const response = await booksService.get();
+    return response.data;
+  } catch (err) {
+    return err.message;
   }
-}
-
-export const addBook = (book) => ({
-  type: ADD_BOOK,
-  book,
 });
 
-export const removeBook = (book) => ({
-  type: REMOVE_BOOK,
-  book,
+const getBooks = createSlice({
+  name: 'booksAsync',
+  initialState,
+  reducers: {},
+  extraReducers: {
+    [AsyncGetBooks.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [AsyncGetBooks.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.books = action.payload;
+    },
+    [AsyncGetBooks.rejected]: (state) => {
+      state.isLoading = false;
+    },
+  },
 });
+
+export const addBook = createAsyncThunk(ADD_BOOK, async (book, thunkAPI) => {
+  try {
+    await booksService.create(book);
+    return thunkAPI.dispatch(AsyncGetBooks());
+  } catch (error) {
+    return error;
+  }
+});
+
+export const removeBook = createAsyncThunk(
+  REMOVE_BOOK,
+  async (payload, thunkAPI) => {
+    try {
+      await booksService.remove(payload);
+      return thunkAPI.dispatch(AsyncGetBooks());
+    } catch (error) {
+      return error;
+    }
+  },
+);
+
+export default getBooks.reducer;

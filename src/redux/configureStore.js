@@ -1,9 +1,9 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import books from './books/books';
+import getBooks from './books/books';
 import categories from './categories/categories';
 
 const rootReducer = combineReducers({
-  books,
+  booksAsync: getBooks,
   categories,
 });
 
