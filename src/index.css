@@ -1,3 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+
+:root {
+  --accent-color: #0290ff;
+  --accent-color-light: #121212;
+  --font1: 'Montserrat', sans-serif;
+  --font2: 'Roboto Slab', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
 body {
-  background-color: transparent;
+  background-color: #f5f6fa;
+}
+
+.app-main-container {
+  padding-left: 6.25rem;
+  padding-right: 6.25rem;
+  padding-top: 6.25rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.813rem 6.25rem;
+  background-color: #fff;
+}
+
+.main-heading {
+  color: var(--accent-color);
+  font-family: var(--font1);
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  margin-left: 2.938rem;
+  gap: 2.563rem;
+}
+
+.profile-icon {
+  background-color: #fff;
+  border-radius: 50%;
+  border-color: #e8e8e8;
+  width: 2.813rem;
+  height: 2.813rem;
+}
+
+.app-components-container {
+  padding-left: 6.25rem;
+  padding-right: 6.25rem;
+  border: 1px solid #fafafa;
+  background-color: #fafafa;
+}
+
+.center-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-links {
+  font-family: var(--font1);
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+  opacity: 50%;
+}
+
+.active {
+  opacity: 100%;
+}
+
+.userIcon {
+  color: var(--accent-color);
 }

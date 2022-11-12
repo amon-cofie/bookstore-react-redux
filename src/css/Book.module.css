@@ -1,0 +1,121 @@
+.newBook {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+}
+
+.commonFontStyles {
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.interaction {
+  display: flex;
+  margin-top: 0.938rem;
+}
+
+.bookStats {
+  display: flex;
+  align-items: center;
+}
+
+.completedStats {
+  display: flex;
+  padding-right: 4.938rem;
+  align-items: center;
+  border-right: 2px solid #e8e8e8;
+}
+
+.progressBar {
+  margin-right: 1.313rem;
+}
+
+.completed {
+  opacity: 0.5;
+  font-family: var(--font1);
+  font-size: 0.875rem;
+  color: var(--accent-color-light);
+}
+
+.chapterStats {
+  padding-left: 3.688rem;
+}
+
+.progressPercentage {
+  font-family: var(--font1);
+  font-size: 2rem;
+  color: var(--accent-color-light);
+}
+
+.currentChapterStats {
+  opacity: 0.5;
+  font-family: var(--font2);
+  font-size: 0.813rem;
+  font-weight: 300;
+  color: var(--accent-color-light);
+}
+
+.currentChapter {
+  margin-top: 0.438rem;
+  font-family: var(--font2);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: var(--accent-color-light);
+}
+
+.updateProgressBtn {
+  margin-top: 1.438rem;
+  border-style: none;
+  color: #fff;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: var(--accent-color);
+}
+
+.bookCategory {
+  opacity: 0.5;
+  font-family: var(--font1);
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--accent-color-light);
+}
+
+.bookTitle {
+  font-family: var(--font2);
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: var(--accent-color-light);
+}
+
+.bookAuthor {
+  font-family: var(--font2);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.bookInteractions {
+  padding-right: 0.938rem;
+  font-family: var(--font2);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.removeBtn {
+  padding-left: 0.938rem;
+  border-left: 2px solid #e8e8e8;
+  border-right: 2px solid #e8e8e8;
+}
+
+.editBtn {
+  padding-left: 0.938rem;
+}

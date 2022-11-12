@@ -1,0 +1,10 @@
+.mainContainer {
+  padding-top: 2.375rem;
+  padding-bottom: 2.375rem;
+}
+
+.booksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.938rem;
+}
