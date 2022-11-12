@@ -31,7 +31,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid black;
   padding: 1.813rem 6.25rem;
   background-color: #fff;
 }
@@ -70,7 +69,7 @@ body {
 .app-components-container {
   padding-left: 6.25rem;
   padding-right: 6.25rem;
-  border: 1px solid black;
+  border: 1px solid #fafafa;
   background-color: #fafafa;
 }
 

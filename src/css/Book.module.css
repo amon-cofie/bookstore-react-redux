@@ -72,6 +72,8 @@
 
 .updateProgressBtn {
   margin-top: 1.438rem;
+  border-style: none;
+  color: #fff;
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border-radius: 3px;
   background-color: var(--accent-color);

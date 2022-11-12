@@ -40,6 +40,7 @@ const Book = (props) => {
         <div className={style.completedStats}>
           <div className={style.progressBar}>
             <Progress
+              strokeColor="#0290ff"
               type="circle"
               percent={60}
               className="circle"
